@@ -25,6 +25,7 @@ public class Reference {
     public static final int GUI_DIFFUSER = 13;
     public static final int GUI_ALGAEBIOREACTOR = 14;
     public static final int GUI_INJECTOR = 15;
+    public static final int GUI_WIND = 16;
 
     // STORAGE SIZES
     public static final int HYDROPONIC_FLUID_CAPACITY = 5000;

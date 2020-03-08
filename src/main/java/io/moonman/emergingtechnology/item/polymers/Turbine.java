@@ -6,5 +6,7 @@ public class Turbine extends ItemBase {
 
     public Turbine() {
         super("turbine");
+        this.maxStackSize = 1;
+        this.setMaxDamage(120);
     }
 }

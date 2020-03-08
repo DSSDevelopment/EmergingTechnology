@@ -2,8 +2,10 @@ package io.moonman.emergingtechnology.machines.wind;
 
 import java.util.List;
 
+import io.moonman.emergingtechnology.EmergingTechnology;
 import io.moonman.emergingtechnology.config.EmergingTechnologyConfig;
 import io.moonman.emergingtechnology.gui.enums.ResourceTypeEnum;
+import io.moonman.emergingtechnology.init.Reference;
 import io.moonman.emergingtechnology.machines.SimpleMachineBase;
 import io.moonman.emergingtechnology.util.KeyBindings;
 import io.moonman.emergingtechnology.util.Lang;
@@ -14,6 +16,7 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
@@ -27,6 +30,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.property.ExtendedBlockState;
 import net.minecraftforge.common.property.IUnlistedProperty;
 import net.minecraftforge.common.property.Properties;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraft.block.ITileEntityProvider;
@@ -57,6 +61,20 @@ public class Wind extends SimpleMachineBase implements ITileEntityProvider {
         } else {
             tooltip.add(Lang.get(Lang.INTERACT_SHIFT));
         }
+    }
+
+    @Override
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
+                                    EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+
+        if (worldIn.isRemote) {
+            return true;
+        }
+
+        playerIn.openGui(EmergingTechnology.instance, Reference.GUI_WIND, worldIn, pos.getX(), pos.getY(),
+                pos.getZ());
+
+        return true;
     }
 
     @Override
