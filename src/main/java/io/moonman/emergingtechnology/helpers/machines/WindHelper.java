@@ -15,17 +15,19 @@ public class WindHelper {
 
     public static boolean isGeneratorInAir(World world, BlockPos pos) {
 
-        BlockPos startPos = pos.add(-2, 0, -2);
+        BlockPos startPos = pos.add(-3, -3, -3);
 
         int waterBlockCount = 0;
 
         for (int x = 0; x < 5; x ++) {
-            for (int z = 0; z < 5; z++) {
-                boolean isValidNeighbour = isValidNeighbour(world.getBlockState(startPos.add(x, 0, z)));
-                if (isValidNeighbour) {
-                    waterBlockCount++;
-                    if (waterBlockCount >= EmergingTechnologyConfig.ELECTRICS_MODULE.WIND.minimumAirBlocks) {
-                        return true;
+            for (int y = 0; y < 5; y++) {
+                for (int z = 0; z < 5; z++) {
+                    boolean isValidNeighbour = isValidNeighbour(world.getBlockState(startPos.add(x, y, z)));
+                    if (isValidNeighbour) {
+                        waterBlockCount++;
+                        if (waterBlockCount >= EmergingTechnologyConfig.ELECTRICS_MODULE.WIND.minimumAirBlocks) {
+                            return true;
+                        }
                     }
                 }
             }

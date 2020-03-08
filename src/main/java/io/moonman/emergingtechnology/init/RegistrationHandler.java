@@ -27,6 +27,7 @@ import io.moonman.emergingtechnology.machines.shredder.ShredderTileEntity;
 import io.moonman.emergingtechnology.machines.solar.SolarTileEntity;
 import io.moonman.emergingtechnology.machines.solarglass.SolarGlassTileEntity;
 import io.moonman.emergingtechnology.machines.tidal.TidalGeneratorTileEntity;
+import io.moonman.emergingtechnology.machines.wind.WindTESR;
 import io.moonman.emergingtechnology.machines.wind.WindTileEntity;
 import io.moonman.emergingtechnology.providers.ModTissueProvider;
 import net.minecraft.block.Block;
@@ -131,7 +132,7 @@ public class RegistrationHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(TidalGeneratorTileEntity.class,
                 new AnimationTESR<TidalGeneratorTileEntity>());
 
-        ClientRegistry.bindTileEntitySpecialRenderer(WindTileEntity.class, new AnimationTESR<WindTileEntity>());
+        ClientRegistry.bindTileEntitySpecialRenderer(WindTileEntity.class, new WindTESR());
         ClientRegistry.bindTileEntitySpecialRenderer(ScrubberTileEntity.class, new AnimationTESR<ScrubberTileEntity>());
         ClientRegistry.bindTileEntitySpecialRenderer(HarvesterTileEntity.class, new AnimationTESR<HarvesterTileEntity>());
 

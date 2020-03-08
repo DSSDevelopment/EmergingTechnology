@@ -48,6 +48,9 @@ import io.moonman.emergingtechnology.machines.scrubber.ScrubberTileEntity;
 import io.moonman.emergingtechnology.machines.shredder.ShredderContainer;
 import io.moonman.emergingtechnology.machines.shredder.ShredderGui;
 import io.moonman.emergingtechnology.machines.shredder.ShredderTileEntity;
+import io.moonman.emergingtechnology.machines.wind.WindContainer;
+import io.moonman.emergingtechnology.machines.wind.WindGui;
+import io.moonman.emergingtechnology.machines.wind.WindTileEntity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -101,6 +104,10 @@ public class GuiProxy implements IGuiHandler {
         }
         if (te instanceof DiffuserTileEntity) {
             return new DiffuserContainer(player.inventory, (DiffuserTileEntity) te);
+        }
+
+        if (te instanceof WindTileEntity) {
+            return new WindContainer(player.inventory, (WindTileEntity) te);
         }
         if (te instanceof AlgaeBioreactorTileEntity) {
             return new AlgaeBioreactorContainer(player.inventory, (AlgaeBioreactorTileEntity) te);
@@ -170,6 +177,10 @@ public class GuiProxy implements IGuiHandler {
 
         if (te instanceof DiffuserTileEntity) {
             return new DiffuserGui(player.inventory, (DiffuserTileEntity) te);
+        }
+
+        if (te instanceof WindTileEntity) {
+            return new WindGui(player.inventory, (WindTileEntity) te);
         }
 
         if (te instanceof AlgaeBioreactorTileEntity) {

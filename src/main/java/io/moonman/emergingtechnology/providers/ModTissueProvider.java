@@ -47,7 +47,7 @@ public class ModTissueProvider {
             baseTissues.add(new ModTissue("Horse", "minecraft:horse", "emergingtechnology:syntheticleather"));
             baseTissues.add(new ModTissue("Spider", "minecraft:spider", "emergingtechnology:syntheticsilk"));
             baseTissues.add(new ModTissue("Slime", "minecraft:slime", "emergingtechnology:syntheticslime"));
-            baseTissues.add(new ModTissue("Zombie", "minecraft:zombie", Items.ROTTEN_FLESH.getRegistryName().toString()));
+            //baseTissues.add(new ModTissue("Zombie", "minecraft:zombie", Items.ROTTEN_FLESH.getRegistryName().toString()));
 
         return baseTissues;
     }

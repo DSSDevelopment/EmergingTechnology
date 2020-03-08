@@ -1,5 +1,6 @@
 package io.moonman.emergingtechnology;
 
+import net.minecraftforge.client.model.obj.OBJLoader;
 import org.apache.logging.log4j.Logger;
 
 import io.moonman.emergingtechnology.gui.GuiProxy;
@@ -37,6 +38,7 @@ public class EmergingTechnology {
   public void preInit(FMLPreInitializationEvent event) {
     logger = event.getModLog();
     proxy.preInit(event);
+    OBJLoader.INSTANCE.addDomain(MODID);
   }
 
   @Mod.EventHandler

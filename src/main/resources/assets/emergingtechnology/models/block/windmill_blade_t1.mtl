@@ -1,0 +1,6 @@
+# Made in Blockbench 3.4.0
+newmtl 0
+map_Kd emergingtechnology:items/turbine_t1_blades
+newmtl 1
+map_Kd emergingtechnology:items/turbine_t1_hub
+newmtl none

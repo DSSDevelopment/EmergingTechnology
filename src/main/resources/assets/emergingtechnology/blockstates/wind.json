@@ -35,7 +35,7 @@
                 "model": "emergingtechnology:windframe"
             },
             "false": {
-                "model": "emergingtechnology:windturbine"
+                "model": "emergingtechnology:windmill_blade_t1.obj"
             }
         }
     }
